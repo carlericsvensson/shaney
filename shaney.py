@@ -27,7 +27,7 @@ def generate(f, starters, contexts):
 		key = tuple(context)
 		wordfreq = contexts.get(key, {})
 		if not wordfreq:
-				break
+			break
 		word = choose(wordfreq)
 		f.write(" " + word)
 		context = context[1:] + [word]
@@ -39,7 +39,7 @@ def choose(wordfreq):
 	# Calculate the total instances.
 	total = 0
 	for w,count in wordfreq.items():
-			total += count
+		total += count
 	# Choose a random instance.
 	chosen = random.randint(1,total)
 	# Walk through to find it.
